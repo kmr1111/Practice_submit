@@ -1,0 +1,413 @@
+p {
+  font-size: 40px;
+  color: red;
+}
+li {
+    color: green;
+  }
+  #list_id {
+    color: blue;
+  }
+  
+  .list_class {
+    color: red;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .box {
+    background-color: red;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .box {
+    background-color: red;
+    width: 200px;}
+
+  * {
+    margin: 0;
+     padding: 0;
+  }
+    
+  .box {
+    background-color: red;
+    width: 200px;
+    height: 200px;}
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+    
+  .box {
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    border: 3px solid #000;
+  }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+  
+.box {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #000;
+  padding: 30px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #000;
+  padding: 30px;
+  margin: 30px;
+}
+
+
+ 
+ 
+キーワードを入力してください
+
+古
+古村 美里
+
+受講生ID: 50764
+
+Webサイトを作ってみよう
+
+3章【CSSの概要を理解しよう】
+目次
+
+本章の目的
+本章の概要
+CSSとは
+CSSファイルの作り方
+CSSの基本
+よく使うプロパティについて
+① background-color：背景をつけることができます。
+② width：要素の幅を指定することができます。
+③ height：要素の高さを指定することができます。
+④ border：要素に枠線をつけます。
+⑤ padding：要素の内側の余白を空けます。
+⑥ margin：要素の外側の余白を空けます。
+⑦ font-size：文字サイズを設定します。
+⑧ color：文字の色を設定できます。
+⑨ font-weight：文字の太さを指定します。
+⑩ text-align：行揃えの位置や、均等割付を指定します。
+本章のまとめ
+本章の目的
+本章では、Webページの見た目を作るためのCSSを学習します。
+CSSを学ぶことで普段私たちが見るような色や形などのスタイルがついた見やすいWebサイトを作ることができます。
+※こちらは一般公開用のコンテンツですが、一部実際のコンテンツと重複している箇所があります。
+
+
+本章の概要
+CSSとは
+CSSファイルの作り方
+CSSの基本
+よく使うプロパティについて
+
+CSSとは
+CSSとはCascading Style Sheets（カスケーディング・スタイル・シート）の略で、スタイルを指定するためのスタイルシート言語と呼ばれるものです。
+下の画像がCSSのコードになります。
+
+
+
+CSSはサイトによっては何千行にもなるため、効率的に書くことや保守性を意識して書くことが重要です。
+
+
+CSSファイルの作り方
+CSSファイルを作成し、2章で作ったフォルダに保存してみましょう。
+HTMLを作った時と同様にVisual Studio Codeを開き、
+Macの場合command⌘ + n、
+Windowsの場合Ctrl + nで新しいファイルを作成します。
+そして下のコードをコピーして貼り付けてみましょう。
+
+
+style.css
+p {
+  font-size: 40px;
+  color: red;
+}
+貼り付けたら、Macの場合command⌘ + s、
+Windowsの場合Ctrl + sで保存します。
+保存場所は前章で作った、index.htmlが入っているpracticeフォルダを選択し、保存する際のファイルの名前はstyle.cssにしましょう。
+
+CSSのファイルの拡張子は.cssになります。この拡張子も.css以外のものにすると正しく表示されないので気をつけましょう。
+ファイルが作成できたらindex.htmlをクリックするか、もしくはブラウザへドラック&ドロップしてみてください。
+スタイルが反映され、以下のように表示されたと思います。
+
+
+
+
+CSSの基本
+CSSではHTMLで書いた文書にスタイルをつけます。下のようにセレクタ、プロパティ、値を指定することでスタイルがつきます。
+
+
+
+
+例えば下記のように書くと、全てのliタグに対して文字の色が緑になります。
+
+
+index.html
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>練習</title>
+  </head>
+  <body>
+    <li>リスト1が入ります。</li>
+    <li>リスト2が入ります。</li>
+    <li>リスト3が入ります。</li>
+    <li>リスト4が入ります。</li>
+    <li>リスト5が入ります。</li>
+    <li>リスト6が入ります。</li>
+    <li>リスト7が入ります。</li>  </body>
+</html>
+style.css
+li {
+  color: green;
+}
+
+
+今回、全てのliタグにスタイルがあたる設定をしましたが、Webサイトを作る際は一部のタグにのみスタイルをつける場面がほとんです。
+そのような場合はclassやidでタグに名前をつけます。
+
+classとidの違いは以下の通りです。
+
+class：同じclass名を何度も使える。
+id：同じid名はページ中に1度しか使えない。
+class,idの設定方法をみていきましょう。まずHTMLは下のコードのようになります。
+
+index.html
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>練習</title>
+  </head>
+  <body>
+    <li id="list_id">リスト1が入ります。</li>
+    <li class="list_class">リスト2が入ります。</li>    <li>リスト3が入ります。</li>
+    <li class="list_class">リスト4が入ります。</li>    <li>リスト5が入ります。</li>
+    <li>リスト6が入ります。</li>
+    <li>リスト7が入ります。</li>
+  </body>
+</html>
+これに対してCSSで下のコードのようにスタイルを当てます。
+classに対してスタイルを当てる場合は.class名、idに対してスタイルを当てる場合は#id名と書きます。
+
+style.css
+#list_id {
+  color: blue;
+}
+
+.list_class {
+  color: red;
+}
+ブラウザで確認してみてください。下の画像のようになっているはずです。
+
+
+
+
+よく使うプロパティについて
+ここではよく使うプロパティについて見ていきましょう。まずは下のコードをHTMLにコピーしてみましょう。
+また、ここで紹介するもの以外にもたくさんのプロパティがあります。
+実際にWebサイトを作るときは、それらのプロパティを組み合わせてスタイリングしていくことになります。
+
+
+index.html
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>練習</title>
+  </head>
+  <body>
+    <div class="box">
+      <p class="box-txt">BOX</p>
+    </div>
+  </body>
+</html>
+このboxクラスとbox-txtクラスに対して、スタイルを当ててみましょう。
+※*に書いているコードは元々ブラウザが持っているCSSをリセットするためのコードです。
+　今は初期設定のようなものだと考えていただいて問題ありません。
+
+① background-color：背景をつけることができます。
+style.css
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background-color: red;
+}
+
+
+② width：要素の幅を指定することができます。
+style.css
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background-color: red;
+  width: 200px;}
+
+
+③ height：要素の高さを指定することができます。
+style.css
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background-color: red;
+  width: 200px;
+  height: 200px;}
+
+
+④ border：要素に枠線をつけます。
+style.css
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #000;}
+
+
+⑤ padding：要素の内側の余白を空けます。
+style.css
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #000;
+  padding: 30px;}
+
+
+⑥ margin：要素の外側の余白を空けます。
+style.css
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #000;
+  padding: 30px;
+  margin: 30px;}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #000;
+  padding: 30px;
+  margin: 30px;
+}
+
+.box-txt {
+  font-size: 30px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #000;
+  padding: 30px;
+  margin: 30px;
+}
+
+.box-txt {
+  font-size: 30px;
+  color: blue;}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+  
+.box {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #000;
+  padding: 30px;
+  margin: 30px;
+}
+  
+.box-txt {
+  font-size: 30px;
+  color: blue;
+  font-weight: bold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #000;
+  padding: 30px;
+  margin: 30px;
+}
+
+.box-txt{
+  font-size: 30px;
+  color: blue;
+  font-weight: bold;
+  text-align: center;}
